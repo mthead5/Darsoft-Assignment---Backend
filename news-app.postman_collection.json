@@ -1,0 +1,1104 @@
+{
+	"info": {
+		"_postman_id": "7f3e4b79-7453-446c-9793-949b46928e7e",
+		"name": "news-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7569665",
+		"_collection_link": "https://dark-crescent-710656.postman.co/workspace/News-App~69e930f4-fc07-4f70-b8b4-7f4545cb78d8/collection/7569665-7f3e4b79-7453-446c-9793-949b46928e7e?action=share&source=collection_link&creator=7569665"
+	},
+	"item": [
+		{
+			"name": "User Management API's",
+			"item": [
+				{
+					"name": "Sign in a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"root@localhost.dev\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"root@localhost.dev\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-gfxZSaRplFI3EcJXGOW89ZInfQY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 12:41:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMwZWQzYTBhNWQxZWJhNGVlZjBhZiIsIm5hbWUiOiJSb290IFVzZXIiLCJpYXQiOjE3MDIwMzkzMDcsImV4cCI6MTcwNDYzMTMwN30.xsp7zLg5OxOCkDOWe0L4K8gvQv0hSOhuXim-LDwt7fE\"\n}"
+						},
+						{
+							"name": "Invalid credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"root@localhost.dev\",\r\n    \"password\": \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-3eCCZZxQZvU7TdUlO81vfszAPts\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 12:42:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"invalid credentials\"\n    ],\n    \"error\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Register a user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fullname",
+									"value": "Mohamed Tawileh",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "tawileh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fullname",
+											"value": "Mohamed Tawileh",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tawileh2@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "490"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ea-TrUxXiirIvC3gQlwp6Xa5ccFQuA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:05:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"fullname\": \"Mohamed Tawileh\",\n        \"email\": \"tawileh2@gmail.com\",\n        \"password\": \"$2a$10$ygpJlRNnylo9Fx28hSGh3OtQyenQRDCnNiCTt1309pVx321lq1SLO\",\n        \"role\": \"user\",\n        \"_id\": \"657314a56722effc926c4133\",\n        \"createdAt\": \"2023-12-08T13:05:41.558Z\",\n        \"updatedAt\": \"2023-12-08T13:05:41.558Z\",\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxNGE1NjcyMmVmZmM5MjZjNDEzMyIsIm5hbWUiOiJNb2hhbWVkIFRhd2lsZWgiLCJpYXQiOjE3MDIwNDA3NDEsImV4cCI6MTcwNDYzMjc0MX0.-brsLnnd1eBsBLQmp60Em7aS3-VesmYYuFViWwezJ4Y\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxMGYwNzQ5MjE4YzQxMjdiOGMwMyIsIm5hbWUiOiJNb2hhbWVkIFRhd2lsZWgiLCJpYXQiOjE3MDIwNDA2NTIsImV4cCI6MTcwNDYzMjY1Mn0.ivlC5HLft7fqTZsx6c58FHSFBegNp7he8qcI3YLfp0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mohammedtawileh@gmail.com\",\r\n    \"country\": \"syria\",\r\n    \"birthday\": \"11-02-18 00:00:00\",\r\n    \"fullname\": \"Mohammed Tawileh\",\r\n    \"phone_number\": \"+963997221447\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mohammedtawileh@gmail.com\",\r\n    \"country\": \"syria\",\r\n    \"birthday\": \"2002-02-18 00:00:00\",\r\n    \"fullname\": \"Mohammed Tawileh\",\r\n    \"phone_number\": \"+963997221447\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/update",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "347"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15b-EnXMckEOmA37HshwelySBy11iEk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:04:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"657310f0749218c4127b8c03\",\n    \"fullname\": \"Mohammed Tawileh\",\n    \"email\": \"mohammedtawileh@gmail.com\",\n    \"password\": \"$2a$10$deT9ZYloWgMIDR.A750XgOAe6opjqCoWx.3a/ckQQPqAJQKqH8K4O\",\n    \"createdAt\": \"2023-12-08T12:49:52.197Z\",\n    \"updatedAt\": \"2023-12-08T13:04:22.209Z\",\n    \"__v\": 0,\n    \"birthday\": \"2002-02-17T22:00:00.000Z\",\n    \"country\": \"syria\",\n    \"phone_number\": \"+963997221447\"\n}"
+						},
+						{
+							"name": "Invalid data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mohammedtawileh@gmail.com\",\r\n    \"country\": \"syria\",\r\n    \"birthday\": \"11-02-18 00:00:00\",\r\n    \"fullname\": \"Mohammed Tawileh\",\r\n    \"phone_number\": \"+963997221447\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/update",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-uxd8tzMIT7XRrwNpPY4JUAnyDOU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:04:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"birthday must be a valid ISO 8601 date string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Address Management API's",
+			"item": [
+				{
+					"name": "Create address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxMGYwNzQ5MjE4YzQxMjdiOGMwMyIsIm5hbWUiOiJNb2hhbWVkIFRhd2lsZWgiLCJpYXQiOjE3MDIwNDA2NTIsImV4cCI6MTcwNDYzMjY1Mn0.ivlC5HLft7fqTZsx6c58FHSFBegNp7he8qcI3YLfp0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Barzeh\",\r\n    \"city\": \"Damascus\",\r\n    \"street\": \"Alhanbali\",\r\n    \"location\": \"Syria, Damascus, Masakn Barzeh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/address/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Barzeh\",\r\n    \"city\": \"Damascus\",\r\n    \"street\": \"Alhanbali\",\r\n    \"location\": \"Syria, Damascus, Masakn Barzeh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/address/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"address",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-ZbgOBHZG/WIPC5gQyOLdN0/qhCY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:06:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Barzeh\",\n    \"city\": \"Damascus\",\n    \"street\": \"Alhanbali\",\n    \"location\": \"Syria, Damascus, Masakn Barzeh\",\n    \"_id\": \"657314d46722effc926c4136\",\n    \"createdAt\": \"2023-12-08T13:06:28.949Z\",\n    \"updatedAt\": \"2023-12-08T13:06:28.949Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user addresses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/user/657310f0749218c4127b8c03",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"user",
+								"657310f0749218c4127b8c03"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/address/user/657310f0749218c4127b8c03",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"address",
+										"user",
+										"657310f0749218c4127b8c03"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"100-cZW3XYHzt6aI+JW9Uo+66zkQs1I\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:07:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"657314d46722effc926c4136\",\n        \"name\": \"Barzeh\",\n        \"city\": \"Damascus\",\n        \"street\": \"Alhanbali\",\n        \"location\": \"Syria, Damascus, Masakn Barzeh\",\n        \"createdAt\": \"2023-12-08T13:06:28.949Z\",\n        \"updatedAt\": \"2023-12-08T13:06:28.957Z\",\n        \"__v\": 0,\n        \"owner\": \"657310f0749218c4127b8c03\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete an address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxMGYwNzQ5MjE4YzQxMjdiOGMwMyIsIm5hbWUiOiJNb2hhbWVkIFRhd2lsZWgiLCJpYXQiOjE3MDIwNDA2NTIsImV4cCI6MTcwNDYzMjY1Mn0.ivlC5HLft7fqTZsx6c58FHSFBegNp7he8qcI3YLfp0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/657314d46722effc926c4136",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"657314d46722effc926c4136"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/address/657314d46722effc926c4136",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"address",
+										"657314d46722effc926c4136"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "254"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fe-Aekm7gRH7fs6AAhxWPQaas7oXTM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:08:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"657314d46722effc926c4136\",\n    \"name\": \"Barzeh\",\n    \"city\": \"Damascus\",\n    \"street\": \"Alhanbali\",\n    \"location\": \"Syria, Damascus, Masakn Barzeh\",\n    \"createdAt\": \"2023-12-08T13:06:28.949Z\",\n    \"updatedAt\": \"2023-12-08T13:06:28.957Z\",\n    \"__v\": 0,\n    \"owner\": \"657310f0749218c4127b8c03\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "News Post Management API's",
+			"item": [
+				{
+					"name": "Create a new news post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxNGExNjcyMmVmZmM5MjZjNDEzMSIsIm5hbWUiOiJSb290IFVzZXIiLCJpYXQiOjE3MDIwNDEwMjcsImV4cCI6MTcwNDYzMzAyN30.Kp5dTxQI-mP59Qtx3uNkErlUFyBuh7EYUAbUCoYLuIU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The post title\",\r\n    \"description\": \"The post description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/news-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news-post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The post title\",\r\n    \"description\": \"The post description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/news-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"news-post"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b6-oF8YYv/baWTeBw1bCli7EZQMWXk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:10:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"The post title\",\n    \"description\": \"The post description\",\n    \"_id\": \"657315cd518569ae40b312f5\",\n    \"createdAt\": \"2023-12-08T13:10:37.785Z\",\n    \"updatedAt\": \"2023-12-08T13:10:37.785Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a news post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxNGExNjcyMmVmZmM5MjZjNDEzMSIsIm5hbWUiOiJSb290IFVzZXIiLCJpYXQiOjE3MDIwNDEwMjcsImV4cCI6MTcwNDYzMzAyN30.Kp5dTxQI-mP59Qtx3uNkErlUFyBuh7EYUAbUCoYLuIU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"We change the title again\",\r\n    \"description\": \"Some new description of the post\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/news-post/657315cd518569ae40b312f5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news-post",
+								"657315cd518569ae40b312f5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"We change the title again\",\r\n    \"description\": \"Some new description of the post\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/news-post/657315cd518569ae40b312f5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"news-post",
+										"657315cd518569ae40b312f5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-cAtjJuXIQnyDhCfq8E2HmoqB8YE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:11:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"657315cd518569ae40b312f5\",\n    \"title\": \"We change the title again\",\n    \"description\": \"Some new description of the post\",\n    \"createdAt\": \"2023-12-08T13:10:37.785Z\",\n    \"updatedAt\": \"2023-12-08T13:11:07.765Z\",\n    \"__v\": 0,\n    \"owner\": \"657314a16722effc926c4131\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all news posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzFkOTE0MjlmZGNlYjA3MGI5MjhiMSIsIm5hbWUiOiJNb2hhbWVkIFRhd2lsZWgiLCJpYXQiOjE3MDIwMjcxOTEsImV4cCI6MTcwNDYxOTE5MX0.d0VaCI7xiPLO-A-ioPpG75RVWoKt8rPmqOBaTPZmsOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/news-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news-post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/news-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"news-post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "884"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"374-RjV39QdKjuPcGXQAMQGeiMaVW0Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 09:36:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6572dfe21c6929daae59cb01\",\n        \"title\": \"We change the title again\",\n        \"description\": \"The post description\",\n        \"createdAt\": \"2023-12-08T09:20:34.824Z\",\n        \"updatedAt\": \"2023-12-08T09:26:57.900Z\",\n        \"__v\": 0,\n        \"owner\": \"6571d91429fdceb070b928b1\"\n    },\n    {\n        \"_id\": \"6572e0011c6929daae59cb05\",\n        \"title\": \"The post title\",\n        \"description\": \"The post description\",\n        \"createdAt\": \"2023-12-08T09:21:05.581Z\",\n        \"updatedAt\": \"2023-12-08T09:21:05.596Z\",\n        \"__v\": 0,\n        \"owner\": \"6571d91429fdceb070b928b1\"\n    },\n    {\n        \"_id\": \"6572e0121c6929daae59cb09\",\n        \"title\": \"The post title\",\n        \"description\": \"The post description\",\n        \"createdAt\": \"2023-12-08T09:21:22.098Z\",\n        \"updatedAt\": \"2023-12-08T09:21:22.108Z\",\n        \"__v\": 0,\n        \"owner\": \"6571d91429fdceb070b928b1\"\n    },\n    {\n        \"_id\": \"6572e03ec3c4a04e91a288a2\",\n        \"title\": \"The post title\",\n        \"description\": \"The post description\",\n        \"createdAt\": \"2023-12-08T09:22:06.033Z\",\n        \"updatedAt\": \"2023-12-08T09:22:06.055Z\",\n        \"__v\": 0,\n        \"owner\": \"6571d91429fdceb070b928b1\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete a news post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzMxNGExNjcyMmVmZmM5MjZjNDEzMSIsIm5hbWUiOiJSb290IFVzZXIiLCJpYXQiOjE3MDIwNDE3MzQsImV4cCI6MTcwNDYzMzczNH0.jg44M3H4X8V6ziLV1LiPB8c_mu-t-n82gJydTWqB4Uk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/news-post/657315cd518569ae40b312f5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news-post",
+								"657315cd518569ae40b312f5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/news-post/657315cd518569ae40b312f5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"news-post",
+										"657315cd518569ae40b312f5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-cAtjJuXIQnyDhCfq8E2HmoqB8YE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 13:22:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"657315cd518569ae40b312f5\",\n    \"title\": \"We change the title again\",\n    \"description\": \"Some new description of the post\",\n    \"createdAt\": \"2023-12-08T13:10:37.785Z\",\n    \"updatedAt\": \"2023-12-08T13:11:07.765Z\",\n    \"__v\": 0,\n    \"owner\": \"657314a16722effc926c4131\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
